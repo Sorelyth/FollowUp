@@ -1,27 +1,31 @@
 import React from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableHighlight, Alert, Image } from 'react-native';
-import logo from './assets/images/icon.png';
+import { StyleSheet, Text, View, TextInput, TouchableHighlight} from 'react-native';
 
-export default class IdAuthentication extends React.Component {
+export default class InicioScreen extends React.Component {
   static navigationOptions = {
     header: null,
   };
-  
-  onPressButton(){
-    this.props.navigation.navigate('LoginPass')
+
+  buttonDiscipulo(){
+    this.props.navigation.navigate('RegDiscipulo')
+  }
+
+  buttonMiembro(){
+    this.props.navigation.navigate('RegMiembro')
   }
 
   render() {
     return (
       <View style={styles.container}>
-        <Image source={logo} style={styles.logo}/>
-        <Text style={[styles.azulProfundoCru, styles.textTitle]}>Continuemos con el acceso.</Text>
-        <TextInput style={[styles.grisCru, styles.input]}
-          placeholder= "Número de identificación"
-        />
-        <TouchableHighlight onPress={this.onPressButton} underlayColor="white">
+        <Text style={[styles.azulProfundoCru, styles.textTitle]}>¡Hola! ¿Hora de registrar a alquien nuevo? Adelante.</Text>
+        <TouchableHighlight onPress={this.buttonDiscipulo} underlayColor="white">
           <View style={styles.buttonContainer}>
-            <Text style={[styles.textButton]}>SIGUIENTE</Text>
+            <Text style={[styles.textButton]}>DISCIPULO</Text>
+          </View>
+        </TouchableHighlight>
+        <TouchableHighlight onPress={this.buttonMiembro} underlayColor="white">
+          <View style={styles.buttonContainer}>
+            <Text style={[styles.textButton]}>MIEMBRO</Text>
           </View>
         </TouchableHighlight>
       </View>
@@ -74,13 +78,5 @@ const styles = StyleSheet.create({
   },
   azulBrillanteCru: {
     color: '#3eb1c8'
-  },
-  logo: {
-    width: 100,
-    height: 100
-  },
-  input: {
-    fontSize: 25,
-    marginBottom: 30
   },
 });

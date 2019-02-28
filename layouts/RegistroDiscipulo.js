@@ -1,7 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, ScrollView, View, TextInput, TouchableHighlight, Alert, Picker } from 'react-native';
 
-export default class App extends React.Component {
+export default class RegistroDiscipulo extends React.Component {
+  static navigationOptions = {
+    header: null,
+  };
+
   constructor(){
     super();
     this.state={
@@ -12,8 +16,10 @@ export default class App extends React.Component {
   }
 
   onPressButton(){
-    Alert.alert('¡Registro exitoso!')
+    Alert.alert('¡Registro exitoso!'),
+    this.props.navigation.navigate('Inicio')
   }
+
   render() {
     return (
       <ScrollView style={styles.container}>

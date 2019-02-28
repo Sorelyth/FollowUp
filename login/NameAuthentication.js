@@ -3,11 +3,14 @@ import { StyleSheet, Text, View, TextInput, TouchableHighlight, Alert, Image } f
 import logo from './assets/images/icon.png';
 
 export default class NameAuthentication extends React.Component {
-
-
+  static navigationOptions = {
+    header: null,
+  };
+  
   onPressButton(){
-    Alert.alert('Nueva pagina')
+    this.props.navigation.navigate('LoginId')
   }
+
   render() {
     return (
       <View style={styles.container}>

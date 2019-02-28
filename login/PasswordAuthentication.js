@@ -3,10 +3,12 @@ import { StyleSheet, Text, View, TextInput, TouchableHighlight, Alert, Image } f
 import logo from './assets/images/icon.png';
 
 export default class PasswordAuthentication extends React.Component {
-
+  static navigationOptions = {
+    header: null,
+  };
 
   onPressButton(){
-    Alert.alert('Nueva pagina')
+    this.props.navigation.navigate('InicioScreen')
   }
   render() {
     return (
